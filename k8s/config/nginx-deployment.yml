@@ -20,11 +20,11 @@ spec:
        env:
        - name: DB_URL
          valueFrom:
-           configN\MapKeyRef:
-             name: db_config
+           configMapKeyRef:
+             name: db-config
              key: DB_URL
        - name: DB_ID
          valueFrom:
-           configN\MapKeyRef:
-             name: db_config
+           configMapKeyRef:
+             name: db-config
              key: DB_ID
