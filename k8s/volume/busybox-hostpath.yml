@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: busybox-hostpath
+spec:
+ containers:
+ - name: busybox1
+   image: busybox
+   command: ["/bin/sh"]
+   args: ["-c", "while true; do echo hello; sleep 10;done"]
+   volumeMounts:
+   - mountPath: /data1
+     name: my-volume
+ - name: busybox2
+   image: busybox
+   command: ["/bin/sh"]
+   args: ["-c", "while true; do echo hello; sleep 10;done"]
+   volumeMounts:
+   - mountPath: /data2
+     name: my-volume
+ volumes:
+ - name: my-volume
+   hostPath:
+     path: /my-data
+     type: Directory
