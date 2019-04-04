@@ -6,7 +6,8 @@ spec:
  selector:
    matchLabels:
      app: nginx
- type: recreate
+ strategy:
+   type: Recreate
  replicas: 2 
  template: 
    metadata:
