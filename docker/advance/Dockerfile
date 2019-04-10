@@ -1,1 +1,4 @@
 FROM nginx
+ENV MYPWD=hello123
+EXPOSE 443
+VOLUME /app
